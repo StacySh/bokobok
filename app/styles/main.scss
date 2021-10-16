@@ -1,0 +1,746 @@
+@import "variables.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+%primarystyle {
+  font-family: "URW Geometric";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  color: $primary;
+}
+
+%secondarystyle {
+  font-family: "URW Geometric";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  color: $typography;
+}
+
+%thirdstyle {
+  font-family: "URW Geometric";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 36px;
+  color: $primary;
+}
+
+body {
+  font-family: "URW Geometric";
+  font-style: normal;
+}
+
+.wraper {
+  min-height: 100%;
+  overflow: hidden;
+  max-width: 1470px;
+  padding: 0 15px;
+}
+.container {
+  max-width: 1170px;
+  margin: 0px auto;
+  @include media-breakpoint-down(md) {
+    padding: 0 25px;
+  }
+  @include media-breakpoint-down(xs) {
+    max-width: 540px;
+  }
+}
+
+/*****************************************************
+*** Buttons ***
+*****************************************************/
+.btns-container {
+  a.btn-theme:active,
+  a.btn-theme:hover,
+  a.btn-theme {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    border-radius: 15px;
+    color: $white;
+    text-align: center;
+  }
+  .btn-theme {
+    padding: 16px 24px;
+    background-color: $secondary;
+    border: $secondary;
+  }
+}
+
+/*****************************************************
+*** navbar ***
+*****************************************************/
+.navbar {
+  padding: 40px 0 15px 0;
+}
+
+.navbar-light .navbar-brand {
+  padding: 0;
+  margin: 0;
+}
+.container-fluid {
+  padding: 0;
+}
+
+.header .nav-item {
+  padding: 0px 30px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  @extend %secondarystyle;
+  color: $typography;
+  padding: 0;
+}
+
+/*****************************************************
+*** section home-page ***
+*****************************************************/
+
+.home-page {
+  background: url(../images/home-page__img.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .home-page__body {
+    padding: 100px 0 250px 0;
+    width: 56%;
+    position: relative;
+    z-index: 2;
+    @include media-breakpoint-down(sm) {
+      width: 70%;
+    }
+    @include media-breakpoint-down(xs) {
+      width: 100%;
+    }
+    .home-page__title {
+      @extend %primarystyle;
+      text-align: left;
+      margin: 0 0 20px 0;
+      .home-page__span {
+        color: $secondary;
+      }
+    }
+    .home-page__text {
+      @extend %thirdstyle;
+      margin: 0 0 40px 0;
+    }
+  }
+  .home-page__img {
+    position: absolute;
+    top: 15%;
+    left: 0%;
+    z-index: 1;
+  }
+}
+
+/*****************************************************
+*** section about ***
+*****************************************************/
+
+.about {
+  .about__title {
+    padding: 190px 0 120px 0;
+    margin: 0;
+    @extend %primarystyle;
+    @include media-breakpoint-down(md) {
+      padding: 120px 0;
+    }
+  }
+  .about__span {
+    color: $secondary;
+  }
+
+  .about__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 0 0 95px 0;
+    @include media-breakpoint-down(md) {
+      flex-wrap: wrap;
+    } 
+    @include media-breakpoint-down(xs) {
+      flex: 0 1 100%;
+      gap: 10px;
+    }
+    .about__item {
+      @include media-breakpoint-down(md) {
+        @include make-col(5);
+      }
+
+      .about__item-img {
+        padding: 0 0 29px 0;
+      }
+      .text-about {
+        @extend %secondarystyle;
+      }
+    }
+  }
+}
+/*****************************************************
+*** section about__promo ***
+*****************************************************/
+.about__promo {
+  background: url(../images/about__bottom-wave.png) no-repeat 0% 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: relative;
+  z-index: 3;
+  @include media-breakpoint-down(lg) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .about__promo-img {
+    padding: 95px 0 71px 0;
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+    @include media-breakpoint-down(lg) {
+      flex: 0 1 100%;
+      padding: 0 0 71px 0;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: 0 15px;
+    }
+
+    img {
+      @include media-breakpoint-down(lg) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .about__promo-text {
+    padding: 0 66px 172px 92px;
+    margin: 0;
+    @extend %primarystyle;
+    @include media-breakpoint-down(lg) {
+      padding: 0 0 60px 0;
+      flex: 0 1 100%;
+    }
+    .about__span {
+      color: $secondary;
+    }
+  }
+}
+
+/*****************************************************
+*** section info ***
+*****************************************************/
+.info {
+  .info__title {
+    padding: 160px 0 120px 0;
+    margin: 0;
+    @extend %primarystyle;
+    @include media-breakpoint-down(md) {
+      padding: 120px 0;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: 100px 0 80px 0;
+    }
+  }
+  .info__list {
+    counter-reset: num;
+    list-style: none;
+    margin: 0 auto 20px auto;
+    padding: 0 0 0 0;
+    width: 66%;
+    @include media-breakpoint-down(md) {
+      width: 80%;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 70%;
+    }
+  }
+  .info__list li {
+    counter-increment: num;
+    position: relative;
+    margin: 5px 0 5px 20px;
+    padding: 0 0 0 0;
+  }
+  .info__list li:before {
+    content: counter(num);
+    position: absolute;
+    left: -15%;
+    top: -25px;
+    text-align: right;
+    font-family: "URW Geometric";
+    font-style: normal;
+    font-weight: 850;
+    font-size: 58px;
+    line-height: 79px;
+    color: $secondary;
+    @include media-breakpoint-down(md) {
+      left: -85px;
+    }
+    @include media-breakpoint-down(sm) {
+      left: -26%;
+    }
+    
+  }
+  .info__list li:nth-child(-n + 9):before {
+    content: "0" counter(num);
+  }
+
+  .info-item__title {
+    @extend %thirdstyle;
+    font-weight: bold;
+    margin: 0 0 16px 0;
+  }
+  .info-text {
+    @extend %secondarystyle;
+    margin: 0 0 80px 0;
+  }
+  .vertical-line {
+    border: 5px solid #f5f9ff;
+    transform: rotate(-180deg);
+    height: 92px;
+    position: absolute;
+    top: 69px;
+    left: -82px;
+    @include media-breakpoint-down(md) {
+      top: 80px;
+      left: -60px;
+    }
+    @include media-breakpoint-down(sm) {
+      top: 100px;
+      left: -95px;
+    }
+    @include media-breakpoint-down(xs) {
+      top: 135px;
+      left: -60px;
+    }
+  }
+  .info__btns {
+    margin: 120px 0;
+    text-align: center;
+  }
+}
+
+/*****************************************************
+*** section description ***
+*****************************************************/
+.description {
+  background: #f5f9ff;
+  .description__title {
+    padding: 160px 0 28px 0;
+    margin: 0;
+    @extend %primarystyle;
+    @include media-breakpoint-down(md) {
+      padding: 80px 0 28px 0;
+    }
+    &:after {
+      content: "";
+      display: block;
+      border: 1px solid #333399;
+      width: 200px;
+      margin: 28px auto 0 auto;
+      text-align: center;
+    }
+  }
+  .description__text {
+    @extend %secondarystyle;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 0 0 120px 0;
+    @include media-breakpoint-down(lg) {
+      width: 80%;
+      padding: 0 0 100px 0;
+    }
+  }
+
+  .row {
+    padding: 0 0 160px 0;
+    .col {
+      @include media-breakpoint-down(md) {
+        flex: 0 1 100%;
+        padding: 0 0 25px 0;
+      }
+
+      .card {
+        padding: 40px;
+        border-radius: 15px;
+        .description-icon {
+          padding: 0 0 20px 0;
+        }
+        .card-body {
+          padding: 0;
+          .card-title {
+            @extend %thirdstyle;
+            font-weight: bold;
+            margin: 0;
+          }
+          .card-text {
+            @extend %secondarystyle;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*****************************************************
+*** section info ***
+*****************************************************/
+.benefits {
+  .benefits__title {
+    padding: 160px 0 28px 0;
+    margin: 0;
+    @extend %primarystyle;
+    @include media-breakpoint-down(lg) {
+      padding: 100px 0 28px 0;
+    }
+    &:after {
+      content: "";
+      display: block;
+      border: 1px solid #333399;
+      width: 200px;
+      margin: 28px auto 0 auto;
+      text-align: center;
+    }
+  }
+  .benefits__text {
+    @extend %secondarystyle;
+    text-align: center;
+    width: 46%;
+    margin: 0 auto;
+    padding: 0 0 120px 0;
+    @include media-breakpoint-down(lg) {
+      width: 70%;
+    }
+    @include media-breakpoint-down(md) {
+      width: 90%;
+    }
+  }
+  .benefits__list {
+    padding: 0 0 220px 0;
+    @include media-breakpoint-down(xl) {
+      padding: 0 0 60px 0;
+    }
+    @include media-breakpoint-down(md) {
+      padding: 0 0 60px 0;
+    }
+    .benefits__item {
+      gap: 170px;
+      padding: 0 20px 100px 20px;
+      @include media-breakpoint-down(md) {
+        gap: 60px;
+        padding: 0 20px 80px 20px;
+      }
+      .benefits__img {
+        @include media-breakpoint-down(md) {
+          flex: 0 1 100%;
+        }
+      }
+      .benefits__body {
+        padding: 0 10px;
+        margin: auto 0;
+        @include media-breakpoint-down(md) {
+          flex: 0 1 100%;
+          text-align: center;
+        }
+        .benefits__body-title {
+          @extend %thirdstyle;
+          font-weight: bold;
+          margin: 0 0 16px 0;
+        }
+        .benefits__body-text {
+          @extend %secondarystyle;
+        }
+      }
+    }
+    .benefits__img-medium {
+      @include media-breakpoint-down(md) {
+        order: 1;
+      }
+    }
+    .benefits__body-medium {
+      @include media-breakpoint-down(md) {
+        order: 2;
+      }
+    }
+  }
+}
+
+/*****************************************************
+*** section price ***
+*****************************************************/
+.price {
+  .price__title {
+    padding: 0 0 28px 0;
+    margin: 0 10%;
+    @extend %primarystyle;
+    &:after {
+      content: "";
+      display: block;
+      border: 1px solid #333399;
+      width: 200px;
+      margin: 28px auto 0 auto;
+      text-align: center;
+    }
+  }
+  .price__text {
+    @extend %secondarystyle;
+    text-align: center;
+    width: 46%;
+    margin: 0 auto;
+    padding: 0 0 120px 0;
+    @include media-breakpoint-down(md) {
+      padding: 0 0 60px 0;
+      width: 80%;
+    }
+  }
+  .row {
+    padding: 0 80px 0 80px;
+    flex-wrap: nowrap;
+    gap: 80px;
+    @include media-breakpoint-down(xl) {
+      padding: 0 40px;
+      gap: 40px;
+    }
+    @include media-breakpoint-down(lg) {
+      flex-wrap: wrap;
+    }
+    .col {
+      padding: 0 0 32px 0;
+      .card {
+        border: 1px solid rgba(51, 51, 153, 0.2);
+        border-radius: 20px;
+
+        .card-body {
+          padding: 60px;
+
+          .card-title {
+            @extend %primarystyle;
+            margin: 0 0 32px 0;
+          }
+          .card-price {
+            @extend %secondarystyle;
+            font-size: 25px;
+            text-align: center;
+            margin: 0;
+            &:after {
+              content: "";
+              display: block;
+              border: 1px solid $secondary;
+              width: 240px;
+              margin: 32px auto 0 auto;
+              text-align: center;
+              @include media-breakpoint-down(xs) {
+                width: 155px;
+              }
+            }
+            span {
+              font-style: normal;
+              font-weight: 900;
+              font-size: 67px;
+              line-height: 60px;
+              color: $secondary;
+            }
+          }
+          .list-group {
+            padding: 52px 0;
+            .list-group-item {
+              border: none;
+              @extend %secondarystyle;
+              padding: 10px 0;
+              .bi {
+                width: 13%;
+                padding: 0 11px 3px 0;
+              }
+              .bi-check2 {
+                color: $secondary;
+              }
+              .bi-x {
+                color: rgba(51, 51, 153, 0.2);
+              }
+            }
+            .notAvailable {
+              color: rgba(51, 51, 153, 0.2);
+            }
+          }
+          .price-btns {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .price__note {
+    @extend %secondarystyle;
+    padding: 0 80px 160px 80px;
+    @include media-breakpoint-down(md) {
+      padding: 0 80px 80px 80px;
+    }
+  }
+}
+
+/*****************************************************
+*** section contact ***
+*****************************************************/
+.contact {
+  .contact__title {
+    padding: 160px 0 120px 0;
+    margin: 0 10%;
+    @extend %primarystyle;
+    @include media-breakpoint-down(xl) {
+      padding: 80px 0 120px 0;
+    }
+  }
+  .contact__body {
+    padding: 0 0 160px 0;
+    @include media-breakpoint-down(md) {
+      justify-content: center;
+    }
+    .contact__img {
+      padding: 0;
+      @include media-breakpoint-down(lg) {
+        padding: 0 15px;
+      }
+      @include media-breakpoint-down(md) {
+        flex: 0 1 100%;
+        padding: 0 15px 60px 15px;
+      }
+    }
+    .form__contact {
+      padding: 0 0 0 100px;
+      @include media-breakpoint-down(lg) {
+        padding: 0 15px;
+      }
+      @include media-breakpoint-down(md) {
+        flex: 0 1 100%;
+        padding: 0 15px;
+      }
+
+      .col-12 {
+        padding: 0;
+        .form-label {
+          @extend %secondarystyle;
+          padding: 0 0 16px 0;
+        }
+        .form-control {
+          @extend %secondarystyle;
+          padding: 30px 20px;
+          border: 1px solid rgba(51, 51, 153, 0.2);
+          box-sizing: border-box;
+          border-radius: 12px;
+          margin: 0 0 40px 0;
+        }
+        ::-webkit-input-placeholder {
+          color: rgba(51, 51, 153, 0.2);
+        }
+        :-moz-placeholder {
+          color: rgba(51, 51, 153, 0.2);
+        }
+        ::-moz-placeholder {
+          color: rgba(51, 51, 153, 0.2);
+        }
+        :-ms-input-placeholder {
+          color: rgba(51, 51, 153, 0.2);
+        }
+      }
+      .form__btns {
+        @include media-breakpoint-down(md) {
+          text-align: center;
+        }
+        .btn {
+          margin: 24px 0 16px 0px;
+          padding: 16px 24px;
+          background-color: $secondary;
+          border: $secondary;
+        }
+      }
+      .consent {
+        @extend %secondarystyle;
+        margin: 0;
+        @include media-breakpoint-down(md) {
+          text-align: center;
+        }
+        span {
+          color: $secondary;
+        }
+      }
+    }
+  }
+}
+/*****************************************************
+*** section footer ***
+*****************************************************/
+
+footer {
+  background-color: #f5f9ff;
+  .row {
+    padding: 160px 0 120px 0;
+    @include media-breakpoint-down(md) {
+      padding: 100px 0;
+    }
+    .footer-logo {
+      text-align: left;
+    }
+    .col {
+      @include media-breakpoint-down(md) {
+        @include make-col(4);
+      }
+      @include media-breakpoint-down(xs) {
+        @include make-col(8);
+      }
+
+      .list-footer {
+        margin: 0;
+        padding: 0;
+        @include media-breakpoint-down(md) {
+          padding: 15px 0;
+        }
+        .list-item {
+          list-style-type: none;
+          text-align: left;
+          padding: 0 0 16px 0;
+          .footer-link {
+            @extend %secondarystyle;
+          }
+        }
+      }
+    }
+    .social-footer {
+      @include media-breakpoint-down(xs) {
+        text-align: left;
+      }
+
+      .me-4 {
+        padding: 0 25px 0 0;
+        text-decoration: none;
+        @include media-breakpoint-down(md) {
+          padding: 0 15px 0 0;
+        }
+      }
+    }
+  }
+  .secondary-footer {
+    padding: 0 0 60px 0;
+    .list-footer {
+      margin: 0;
+      padding: 0;
+
+      .list-item {
+        list-style-type: none;
+        display: inline;
+        float: left;
+        padding: 0 59px 0 0;
+        .footer-link {
+          @extend %secondarystyle;
+          padding: 0 0 16px 0;
+        }
+      }
+    }
+  }
+}
